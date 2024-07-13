@@ -1,3 +1,5 @@
+import "./style/SearchBar.css";
+
 export default function SearchBar({ searItem, setSearchItem }) {
   let handleChange = (evt) => {
     setSearchItem(evt.target.value);

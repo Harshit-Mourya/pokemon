@@ -26,9 +26,11 @@ export default function Pokemon() {
   return (
     <div className="Pokemon">
       <SearchBar searchItem={searchItem} setSearchItem={setSearchItem} />
-      {pokemons.map((pokemon, index) => (
-        <Card key={index} pokemonUrl={pokemon.url} />
-      ))}
+      <div className="pokemon-card">
+        {pokemons.map((pokemon, index) => (
+          <Card key={index} pokemonUrl={pokemon.url} />
+        ))}
+      </div>
     </div>
   );
 }

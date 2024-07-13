@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import Card from "./Card";
+import SearchBar from "./SearchBar";
 import "./style/Pokemon.css";
 
 export default function Pokemon() {
   let [pokemons, setPokemons] = useState([]);
+  let [searchItem, setSearchItem] = useState("");
 
   useEffect(() => {
     let fetchPokemon = async () => {
@@ -23,6 +25,7 @@ export default function Pokemon() {
 
   return (
     <div className="Pokemon">
+      <SearchBar searchItem={searchItem} setSearchItem={setSearchItem} />
       {pokemons.map((pokemon, index) => (
         <Card key={index} pokemonUrl={pokemon.url} />
       ))}
